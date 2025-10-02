@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitor de Temperatura</title>
+  <script>
+    async function carregarTemperatura() {
+      const url = "https://api.thingspeak.com/channels/3098401/fields/1/last.json"; 
+      const response = await fetch(url);
+      const data = await response.json();
+
+      document.getElementById("temp").innerText = data.field1 + " °C";
+    }
+
+    // Atualiza a cada 10 segundos
+    setInterval(carregarTemperatura, 10000);
+    window.onload = carregarTemperatura;
+  </script>
+</head>
+<body>
+  <h1>Temperatura Atual:</h1>
+  <h2 id="temp">-- °C</h2>
+</body>
+</html>
