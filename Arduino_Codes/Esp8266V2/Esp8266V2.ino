@@ -27,12 +27,15 @@ void setup() {
 }
 
 void loop() {
+  while(Serial.available()) Serial.read(); // limpa buffer
+
   if (Serial.available() > 0) {
     String leitura = Serial.readStringUntil('\n');
     leitura.trim();
 
     if (leitura.length() > 0) {
-      while(Serial.available()) Serial.read(); // limpa buffer
+      float temperatura = leitura.toFloat();
+
 
       Serial.print("Enviando temperatura: ");
       Serial.println(temperatura);
