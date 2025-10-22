@@ -13,7 +13,7 @@ const char* writeAPIKey = "XKL5MNLM8JVJSUDC";
 WiFiClient client;
 
 void setup() {
-  Serial.begin(115200); // mesma taxa do Arduino
+  Serial.begin(9600); // mesma taxa do Arduino
   WiFi.begin(ssid, password);
 
   Serial.println("Conectando ao WiFi...");

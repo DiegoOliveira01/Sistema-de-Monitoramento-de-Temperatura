@@ -7,7 +7,7 @@ const float NOMINAL_TEMPERATURE = 25.0;      // temperatura nominal
 const float BETA_COEFFICIENT = 3950.0;       // constante Beta do NTC (MF58)
 
 void setup() {
-  Serial.begin(115200); // Comunicação serial (com o ESP8266 e com o PC)
+  Serial.begin(9600); // Comunicação serial (com o ESP8266 e com o PC)
   delay(2000);        // pequena pausa para estabilizar
 }
 
